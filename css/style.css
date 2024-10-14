@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: #100b2d;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 920px;
+    height: 280px;
+    margin: 0px auto;
+    position: relative;
+    background: linear-gradient(
+        #1a1347,
+        #f1b7ea 70%,
+        #f2bca2
+    );
+    border-radius: 1.1rem;
+    overflow: hidden;
+}
+
+.flower {
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    bottom: 22px;
+    left: 42px;
+    z-index: 2;
+    background: url('./assets/flower.png') repeat-x 0px 0px;
+    background-size: 84px 84px;
+    background-position-x: 0px;
+}
+
+.flower-walk {
+    animation: walkCycle 0.25s steps(1) infinite;
+}
+
+.flower-jump {
+    background: url('./assets/flowerJump.png') no-repeat center;
+    background-size: 84px 84px;
+}
+
+.flower-stop {
+    background: url("./assets/flowerStop.png");
+    background-size: 84px 84px;
+}
+
+
+
+@keyframes walkCycle{
+    0% {
+        background: url('./assets/flower.png') no-repeat center;
+        background-size: 84px 84px;
+    }
+    50% {
+        background: url('./assets/flowerWalk.png') no-repeat center;
+        background-size: 84px 84px;
+    } 
+}
+
+.ground {
+    width: 200%;
+    height: 170px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url('./assets/ground.png') repeat-x;
+    background-size: 20% 170px;
+}
+
+.cactus {
+    width: 60px;
+    height: 60px; 
+    position: absolute;
+    bottom: 16px;
+    left: 600px;
+    z-index: 1;
+    background: url("./assets/obstacle1.png") no-repeat;
+    background-size: contain; 
+}
+
+.score {
+    width: 100px;
+    height: 30px;
+    position: absolute;
+    top: 5px; 
+    right: 15px;
+    z-index: 10;
+    color: #f1b7ea;
+    font-family: 'poppins';
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #100b2d70;
+    color: #f1b7ea;
+    font-family: "poppins";
+    padding: 20px;
+    border-radius: 1rem;
+    z-index: 100;
+    text-align: center;
+}
+
+.restart {
+    background: #f1b7ea;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.restart button {
+    background: #f1b7ea;
+    border: none;
+    color: #100b2d;
+    font-family: "poppins";
+}
